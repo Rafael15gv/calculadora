@@ -8,6 +8,9 @@ const pulso = document.querySelectorAll(".tecla");
 
 display.textContent = Visual;
 
+console.log("nueva linea de comando para ver la diferencia");
+
+
 pulso.forEach((elemento) => {
   elemento.addEventListener("click", () => {
     const teclaPresionada = elemento.textContent;
