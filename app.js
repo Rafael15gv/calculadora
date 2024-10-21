@@ -1,4 +1,3 @@
-let teclaPresionada;
 let Visual = "0";
 
 const display = document.getElementById("display");
@@ -8,28 +7,19 @@ const pulso = document.querySelectorAll(".tecla");
 
 display.textContent = Visual;
 
-console.log("nueva linea de comando para ver la diferencia");
-
-
 pulso.forEach((elemento) => {
   elemento.addEventListener("click", () => {
-    const teclaPresionada = elemento.textContent;
+    let teclaPresionada = elemento.textContent;
 
     if (teclaPresionada == "=") {
-      try {
-        Visual = eval(Visual);
-        display.textContent = Visual;
-      } catch (error) {
-        display.textContent = "Error!";
-        Visual = "0";
-      }
+      display.textContent = eval(Visual);
+      Visual = eval(Visual);
       return;
     }
 
     if (Visual == "0") {
       Visual = teclaPresionada;
       display.textContent = Visual;
-      console.log("entramos a if");
     } else {
       Visual += teclaPresionada;
       display.textContent = Visual;
